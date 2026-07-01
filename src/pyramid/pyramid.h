@@ -7,6 +7,11 @@
 
 #include <QString>
 
-QString buildPyramid(int height);
+enum class PyramidDisplayMode {
+    Stars,
+    Numbers
+};
+
+QString buildPyramid(int height, PyramidDisplayMode displayMode = PyramidDisplayMode::Stars);
 
 #endif //PRINT_PYRAMID_PYRAMID_H

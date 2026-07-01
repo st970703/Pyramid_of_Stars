@@ -9,10 +9,14 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
+#include <memory>
+
 #include "pyramid/pyramid.h"
 
 namespace {
 constexpr const char* kPyramidWindowTitle = "Pyramid of Stars";
+constexpr const char* kStarsModeButtonText = "Display mode: Stars";
+constexpr const char* kNumbersModeButtonText = "Display mode: Numbers";
 }
 
 QWidget *createPyramidWindow() {
@@ -33,17 +37,20 @@ QWidget *createPyramidWindow() {
     heightSpinBox->setValue(7);
 
     auto *generateButton = new QPushButton("Generate");
+    auto *displayModeButton = new QPushButton(kStarsModeButtonText);
+    auto displayMode = std::make_shared<PyramidDisplayMode>(PyramidDisplayMode::Stars);
 
     auto *controlsLayout = new QHBoxLayout;
     controlsLayout->addWidget(heightLabel);
     controlsLayout->addWidget(heightSpinBox);
     controlsLayout->addStretch();
+    controlsLayout->addWidget(displayModeButton);
     controlsLayout->addWidget(generateButton);
 
     auto *output = new QPlainTextEdit;
     output->setReadOnly(true);
     output->setLineWrapMode(QPlainTextEdit::NoWrap);
-    output->setPlainText(buildPyramid(heightSpinBox->value()));
+    output->setPlainText(buildPyramid(heightSpinBox->value(), *displayMode));
 
     QFont outputFont("Consolas");
     outputFont.setStyleHint(QFont::Monospace);
@@ -55,12 +62,26 @@ QWidget *createPyramidWindow() {
     mainLayout->addLayout(controlsLayout);
     mainLayout->addWidget(output);
 
-    QObject::connect(generateButton, &QPushButton::clicked, window, [heightSpinBox, output]() {
-        output->setPlainText(buildPyramid(heightSpinBox->value()));
+    auto updateOutput = [heightSpinBox, output, displayMode]() {
+        output->setPlainText(buildPyramid(heightSpinBox->value(), *displayMode));
+    };
+
+    QObject::connect(generateButton, &QPushButton::clicked, window, updateOutput);
+
+    QObject::connect(displayModeButton, &QPushButton::clicked, window, [displayModeButton, updateOutput, displayMode]() {
+        if (*displayMode == PyramidDisplayMode::Stars) {
+            *displayMode = PyramidDisplayMode::Numbers;
+            displayModeButton->setText(kNumbersModeButtonText);
+        }
+        else {
+            *displayMode = PyramidDisplayMode::Stars;
+            displayModeButton->setText(kStarsModeButtonText);
+        }
+        updateOutput();
     });
 
-    QObject::connect(heightSpinBox, &QSpinBox::valueChanged, window, [heightSpinBox, output](int) {
-        output->setPlainText(buildPyramid(heightSpinBox->value()));
+    QObject::connect(heightSpinBox, &QSpinBox::valueChanged, window, [updateOutput](int) {
+        updateOutput();
     });
 
     return window;
