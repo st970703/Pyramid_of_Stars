@@ -12,6 +12,10 @@ enum class PyramidDisplayMode {
     Numbers
 };
 
-QString buildPyramid(int height, PyramidDisplayMode displayMode = PyramidDisplayMode::Stars);
+QString buildPyramid(
+    int height,
+    PyramidDisplayMode displayMode = PyramidDisplayMode::Stars,
+    bool upsideDown = false
+);
 
 #endif //PRINT_PYRAMID_PYRAMID_H
