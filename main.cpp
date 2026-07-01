@@ -14,10 +14,10 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
 
     auto *window = new QWidget;
-    window->setWindowTitle("Print Pyramid");
+    window->setWindowTitle("Pyramid of Stars");
     window->resize(420, 360);
 
-    auto *titleLabel = new QLabel("Print Pyramid");
+    auto *titleLabel = new QLabel("Pyramid of Stars");
     QFont titleFont = titleLabel->font();
     titleFont.setPointSize(18);
     titleFont.setBold(true);
