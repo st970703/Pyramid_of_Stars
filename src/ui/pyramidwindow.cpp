@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-#include "pyramid.h"
+#include "pyramid/pyramid.h"
 
 QWidget *createPyramidWindow() {
     auto *window = new QWidget;

@@ -15,11 +15,13 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(Print_Pyramid WIN32 main.cpp
-        pyramid.cpp
-        pyramid.h
-        pyramidwindow.cpp
-        pyramidwindow.h)
+add_executable(Print_Pyramid WIN32
+        src/main.cpp
+        src/pyramid/pyramid.cpp
+        src/pyramid/pyramid.h
+        src/ui/pyramidwindow.cpp
+        src/ui/pyramidwindow.h)
+target_include_directories(Print_Pyramid PRIVATE src)
 target_link_libraries(Print_Pyramid
         Qt::Core
         Qt::Gui
