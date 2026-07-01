@@ -29,7 +29,8 @@ Run using the run config in CLion.
 [Build_doc](./doc/Build.md)
 
 ## Screenshot
-![Application_Screenshot](./img/Application.png)
+![star_pyramid_screenshot](./img/star_pyramid.png)
+![number_pyramid_screenshot](./img/number_pyramid.png)
 
 ## Example Output
 
