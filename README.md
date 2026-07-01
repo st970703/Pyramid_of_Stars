@@ -1,7 +1,7 @@
 # Pyramid of Stars
 ![Pyramid_photo_from_unsplash](./img/pyramid_from_unsplash.jpg)
 
-A small Qt Widgets application for generating a centered text pyramid with stars.
+A Qt Widget application for generating a centered text pyramid with stars.
 
 The app lets you choose a height and displays the pyramid in a
 monospace text area.
