@@ -1,7 +1,3 @@
-//
-// Created by st970 on 1/07/2026.
-//
-
 #include "pyramid.h"
 
 QString buildPyramid(int height) {
