@@ -1,0 +1,88 @@
+# Build directories
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Testing/
+
+# CMake generated project files
+*.cmake
+!CMakeLists.txt
+!cmake/**/*.cmake
+
+# Compiled binaries and libraries
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.manifest
+*.res
+
+# Debug and profiling output
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+*.profraw
+*.profdata
+core
+core.*
+
+# CLion / JetBrains
+.idea/
+*.iml
+
+# Visual Studio
+.vs/
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+ipch/
+x64/
+x86/
+Win32/
+ARM/
+ARM64/
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# Visual Studio Code
+.vscode/
+
+# Qt deployment/runtime byproducts
+plugins/
+platforms/
+translations/
+qmlcache/
+*.qmlc
+*.jsc
+
+# Local tooling/cache
+.codegraph/
+.cache/
+*.log
+
+# OS files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
