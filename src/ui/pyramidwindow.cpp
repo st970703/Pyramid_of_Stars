@@ -11,12 +11,16 @@
 
 #include "pyramid/pyramid.h"
 
+namespace {
+constexpr const char* kPyramidWindowTitle = "Pyramid of Stars";
+}
+
 QWidget *createPyramidWindow() {
     auto *window = new QWidget;
-    window->setWindowTitle("Pyramid of Stars");
+    window->setWindowTitle(kPyramidWindowTitle);
     window->resize(420, 360);
 
-    auto *titleLabel = new QLabel("Pyramid of Stars");
+    auto *titleLabel = new QLabel(kPyramidWindowTitle);
     QFont titleFont = titleLabel->font();
     titleFont.setPointSize(18);
     titleFont.setBold(true);
