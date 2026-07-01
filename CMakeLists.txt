@@ -17,7 +17,9 @@ find_package(Qt6 COMPONENTS
 
 add_executable(Print_Pyramid WIN32 main.cpp
         pyramid.cpp
-        pyramid.h)
+        pyramid.h
+        pyramidwindow.cpp
+        pyramidwindow.h)
 target_link_libraries(Print_Pyramid
         Qt::Core
         Qt::Gui
