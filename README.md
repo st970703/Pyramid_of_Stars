@@ -23,7 +23,10 @@ If Qt is installed somewhere else, update `CMAKE_PREFIX_PATH` in
 `CMakeLists.txt` or pass it when configuring CMake.
 
 ## Run
-I ran using the run config in CLion.
+Run using the run config in CLion.
+
+## Build
+[Build_doc](./doc/Build.md)
 
 ## Screenshot
 ![Application_Screenshot](./img/Application.png)
