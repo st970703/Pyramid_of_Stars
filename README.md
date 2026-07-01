@@ -16,7 +16,7 @@ monospace text area.
 This project is currently configured for a local Qt install at:
 
 ```text
-D:/Qt/6.11.1/mingw_64/lib/cmake
+Qt/6.11.1/mingw_64/lib/cmake
 ```
 
 If Qt is installed somewhere else, update `CMAKE_PREFIX_PATH` in
